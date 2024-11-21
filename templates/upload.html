@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection Uploader</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .file-input-container {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .file-input {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .file-label {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+
+        .file-label:hover {
+            background-color: #0056b3;
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #1e7e34;
+        }
+
+        .info-text {
+            font-size: 0.9em;
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            form {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .file-label, .submit-button {
+                width: 100%;
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Image or Video for Detection</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="file-input-container">
+            <label for="file" class="file-label">Choose File</label>
+            <input id="file" class="file-input" type="file" name="file" accept="image/*,video/*" required>
+        </div>
+        <button type="submit" class="submit-button">Upload & Process</button>
+        <p class="info-text">Supported formats: JPG, PNG, MP4, AVI, MOV, MKV</p>
+    </form>
+</body>
+</html>
+
+
+
