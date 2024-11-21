@@ -11,19 +11,11 @@ OUTPUT_FOLDER = 'outputs'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-# Define the path where the model will be stored
-model_path = "model.pt"
-
-# Check if the model exists; if not, download it
-if not os.path.exists(model_path):
-    os.system("wget yolov8 model 2.pt -O model.pt")
-
-# Load the YOLO model
+# Load YOLO model
 try:
-    model = YOLO(model_path)
+    model = YOLO('./yolov8 model 2.pt')  # Replace with the correct path
 except Exception as e:
-    print(f"Error loading YOLO model: {e}")
-    exit(1)
+    app.logger.error(f"Error loading YOLO model: {e}")
 
 
 def predict_and_save_image(path_test_car, output_image_path):
