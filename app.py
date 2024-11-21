@@ -13,7 +13,7 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # Load YOLO model
 try:
-    model = YOLO('G:\mlOps\objecDetec\yolov8 model 2.pt')  # Replace with the correct path
+    model = YOLO('./yolov8 model 2.pt')  # Replace with the correct path
 except Exception as e:
     app.logger.error(f"Error loading YOLO model: {e}")
 
